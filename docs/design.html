@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>算件 · 前端设计稿（393px 优先）</title>
+<style>
+  /* ============ 令牌（与 style.css 保持一致） ============ */
+  :root{
+    --bg:#fafafa; --panel:#ffffff; --card-2:#f5f5f5;
+    --line:#e6e6e6; --line-strong:#cfcfcf;
+    --text:#18181b; --text-2:#52525b; --text-3:#a1a1aa;
+    --brand:#2f5fe0; --brand-weak:#eaf0fd;
+    --ok:#15803d; --warn:#b45309; --danger:#dc2626;
+    --r-ctl:6px; --r-card:8px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0f0f10; --panel:#17181a; --card-2:#1f2023;
+      --line:#2a2b2e; --line-strong:#3f4045;
+      --text:#ededed; --text-2:#a1a1a6; --text-3:#6e6e73;
+      --brand:#7c9cff; --brand-weak:#1c2340;
+      --ok:#4ade80; --warn:#fbbf24; --danger:#f87171;
+    }
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg); color:var(--text);
+    font:13px/1.6 -apple-system,"SF Pro Text","PingFang SC","Segoe UI","Microsoft YaHei",sans-serif;
+    padding:24px 16px 64px;
+  }
+  .wrap{max-width:1120px; margin:0 auto}
+  h1{font-size:15px; font-weight:600}
+  .sub{color:var(--text-3); font-size:11px; margin-top:4px}
+  h2{font-size:14px; font-weight:600; margin:32px 0 4px; padding-top:16px; border-top:1px solid var(--line)}
+  .note{color:var(--text-3); font-size:11px; margin-bottom:12px}
+  [hidden]{display:none !important}
+  svg{flex:none; display:block}
+
+  /* ============ 通用零件 ============ */
+  .btn{display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:500;
+    padding:7px 14px; border-radius:var(--r-ctl); border:1px solid var(--line-strong);
+    background:var(--panel); color:var(--text); cursor:pointer; transition:background .15s ease-out, border-color .15s ease-out}
+  .btn:hover{background:var(--card-2); border-color:var(--text-3)}
+  .btn-primary{background:var(--brand); border-color:var(--brand); color:#fff}
+  .btn-primary:hover{filter:brightness(1.06); background:var(--brand)}
+  .btn-sm{font-size:12px; padding:4px 10px}
+  .badge{display:inline-flex; align-items:center; gap:4px; font-size:10px; padding:1px 8px;
+    border-radius:4px; border:1px solid var(--line); color:var(--text-2)}
+  .badge-ok{color:var(--ok); border-color:color-mix(in srgb, var(--ok) 30%, transparent)}
+  .badge-warn{color:var(--warn); border-color:color-mix(in srgb, var(--warn) 30%, transparent)}
+  .dot{width:6px; height:6px; border-radius:50%; background:currentColor}
+  .card{background:var(--panel); border:1px solid var(--line); border-radius:var(--r-card)}
+  .money{font-variant-numeric:tabular-nums}
+  table{width:100%; border-collapse:collapse; font-size:12px}
+  th{font-size:11px; font-weight:500; color:var(--text-3); text-align:left; padding:8px 10px;
+    border-bottom:1px solid var(--line)}
+  td{padding:8px 10px; border-bottom:1px solid var(--line)}
+  tr:last-child td{border-bottom:none}
+  .num{text-align:right; font-variant-numeric:tabular-nums}
+  .muted{color:var(--text-3)}
+  .row{display:flex; align-items:center; gap:8px; padding:10px 12px; border-bottom:1px solid var(--line)}
+  .row:last-child{border-bottom:none}
+
+  /* 状态块 */
+  .state{display:flex; flex-direction:column; align-items:center; gap:8px; padding:32px 16px; text-align:center}
+  .state .t{font-size:13px; font-weight:500}
+  .state .d{font-size:11px; color:var(--text-3); max-width:220px}
+  .sk{height:12px; border-radius:4px; background:var(--card-2); animation:pulse 1.2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+
+  /* ============ 手机样机 ============ */
+  .frames{display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start}
+  .phone{width:393px; background:var(--bg); border:1px solid var(--line-strong); border-radius:10px; overflow:hidden}
+  .phone-cap{font-size:11px; color:var(--text-3); padding:8px 12px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between}
+  .appbar{display:flex; align-items:center; gap:8px; padding:12px 16px; background:var(--panel); border-bottom:1px solid var(--line)}
+  .appbar .name{font-size:15px; font-weight:600}
+  .screen{height:560px; overflow:hidden; display:flex; flex-direction:column}
+  .content{flex:1; overflow:hidden; padding:16px}
+  .tabbar{display:flex; border-top:1px solid var(--line); background:var(--panel); padding-bottom:6px}
+  .tab{flex:1; display:flex; flex-direction:column; align-items:center; gap:2px; padding:8px 0 4px;
+    font-size:10px; color:var(--text-3)}
+  .tab.on{color:var(--brand)}
+  .sect{font-size:11px; color:var(--text-3); margin:16px 0 8px}
+  .sect:first-child{margin-top:0}
+  .drop{border:1.5px dashed var(--line-strong); border-radius:var(--r-card); padding:28px 16px;
+    display:flex; flex-direction:column; align-items:center; gap:8px; text-align:center; background:var(--panel)}
+  .kv{display:flex; justify-content:space-between; font-size:12px; padding:9px 0; border-bottom:1px solid var(--line)}
+  .kv:last-child{border-bottom:none}
+  .ticket{padding:12px; display:flex; justify-content:space-between; align-items:center; gap:8px}
+  .ticket + .ticket{border-top:1px solid var(--line)}
+  .ticket .no{font-size:13px; font-weight:500}
+  .ticket .meta{font-size:11px; color:var(--text-3); margin-top:2px}
+
+  /* 桌面示意 */
+  .desk{border:1px solid var(--line-strong); border-radius:10px; overflow:hidden; display:grid;
+    grid-template-columns:200px 1fr; min-height:340px}
+  .desk .side{background:var(--panel); border-right:1px solid var(--line); padding:16px 8px}
+  .desk .side .item{display:flex; align-items:center; gap:8px; padding:8px 12px; border-radius:var(--r-ctl);
+    font-size:13px; color:var(--text-2); margin-bottom:2px}
+  .desk .side .item.on{color:var(--brand); background:var(--brand-weak)}
+  .desk .main{padding:20px 24px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>算件 · 前端设计稿</h1>
+  <div class="sub">Fable 线条风：细线为骨 / 留白为肉 / 黑白灰为底 / 品牌色 ≤3 处。手机 393px 优先，桌面左侧栏双适配。深浅色两套令牌随系统切换。</div>
+
+  <h2>01 色彩令牌</h2>
+  <div class="note">唯一彩色 = 品牌色，只出现在：① 底栏当前态 ② 主按钮 ③ 关键金额强调，单页 ≤3 处。状态色只做小色点/文字/徽章。</div>
+  <div class="card"><div class="row">
+    <span class="badge"><span class="dot" style="background:var(--brand)"></span>brand #2F5FE0</span>
+    <span class="badge"><span class="dot" style="background:var(--ok)"></span>ok</span>
+    <span class="badge"><span class="dot" style="background:var(--warn)"></span>warn</span>
+    <span class="badge"><span class="dot" style="background:var(--danger)"></span>danger</span>
+    <span class="badge" style="background:var(--card-2)">line #E6E6E6</span>
+    <span class="badge" style="background:var(--card-2)">text-3 #A1A1AA</span>
+  </div></div>
+
+  <h2>02 字号层级（≤4 级）</h2>
+  <div class="note">15 semibold 页题 / 13 正文 / 11 辅助 / 10 注释。层级靠字重与间距，不靠字号堆。金额 tabular-nums 对位。</div>
+  <div class="card">
+    <div class="row"><span style="font-size:15px;font-weight:600">计件工资核算台（15/600）</span></div>
+    <div class="row"><span>正文：冲压车间 · 5 张工票（13/400）</span></div>
+    <div class="row"><span style="font-size:11px;color:var(--text-3)">辅助：期间 2026-08-26 → 2026-09-25（11）</span></div>
+    <div class="row"><span style="font-size:10px;color:var(--text-3)">注释：个税为演示口径（10）</span></div>
+  </div>
+
+  <h2>03 组件</h2>
+  <div class="note">1px hairline 分隔；零阴影（浮层除外）；圆角 6/8；图标全线条 SVG 16px，stroke 1.75，零 emoji；微动效 150-200ms。</div>
+  <div class="card" style="padding:12px; display:flex; flex-wrap:wrap; gap:12px; align-items:center">
+    <button class="btn btn-primary">开始核算</button>
+    <button class="btn">选择 CSV 文件</button>
+    <button class="btn btn-sm">重试</button>
+    <span class="badge badge-ok"><span class="dot"></span>已核算</span>
+    <span class="badge badge-warn"><span class="dot"></span>2 行待确认</span>
+    <span class="badge">演示数据</span>
+  </div>
+  <div class="card" style="margin-top:12px">
+    <table>
+      <thead><tr><th>工人</th><th class="num">数量</th><th class="num">废品</th><th class="num">计件工资</th></tr></thead>
+      <tbody>
+        <tr><td>赵国庆</td><td class="num">908</td><td class="num">6</td><td class="num money">¥2,364.06</td></tr>
+        <tr><td>冯玉珍</td><td class="num">352</td><td class="num">0</td><td class="num money">¥641.84</td></tr>
+        <tr><td style="color:var(--text-3)">合计</td><td class="num" style="color:var(--text-3)">—</td><td class="num" style="color:var(--text-3)">—</td><td class="num money" style="color:var(--text-3)">¥12,804.33</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>04 三态（每视图齐备）</h2>
+  <div class="note">加载=骨架条脉冲；空态=线条图标+说人话指引+行动按钮；错误=给原因给出路，不甩术语、不让用户「检查服务端」。</div>
+  <div class="frames">
+    <div class="phone" style="width:260px"><div class="state">
+      <div class="sk" style="width:60%"></div><div class="sk" style="width:90%"></div><div class="sk" style="width:75%"></div><div class="sk" style="width:82%"></div>
+    </div><div class="phone-cap">加载态</div></div>
+    <div class="phone" style="width:260px"><div class="state">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-3)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
+      <div class="t">还没有工资条</div>
+      <div class="d">先在「核算」里跑一次本月核算，工资条会自动生成</div>
+      <button class="btn btn-sm btn-primary">去核算</button>
+    </div><div class="phone-cap">空态</div></div>
+    <div class="phone" style="width:260px"><div class="state">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--warn)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 20h16a2 2 0 0 0 1.73-2Z"/><path d="M12 9v4M12 17h.01"/></svg>
+      <div class="t">有 2 行工票没算进去</div>
+      <div class="d">第 3、7 行的「单价」是空的，补好单价再核算一次就行</div>
+      <button class="btn btn-sm">去看工票</button>
+    </div><div class="phone-cap">错误态</div></div>
+  </div>
+
+  <h2>05 手机五屏（393px）</h2>
+  <div class="frames">
+
+    <!-- 屏1 导入 -->
+    <div class="phone">
+      <div class="phone-cap"><span>① 导入</span><span>预览确认</span></div>
+      <div class="screen">
+        <div class="appbar"><span class="name">算件</span><span class="badge">演示数据</span></div>
+        <div class="content">
+          <div class="sect">解析结果 · gongpiao-0918.csv</div>
+          <div class="card">
+            <div class="row" style="justify-content:space-between">
+              <span style="font-size:13px;font-weight:500">42 行全部认得</span><span class="badge badge-ok"><span class="dot"></span>可导入</span>
+            </div>
+            <div class="row muted" style="font-size:11px">6 张工票 · 09-08 → 09-18 · 冲压 / 装配车间</div>
+          </div>
+          <div class="sect">预览（前 3 行）</div>
+          <div class="card"><table>
+            <thead><tr><th>工序</th><th>姓名</th><th class="num">数量</th><th class="num">单价</th><th class="num">废品</th></tr></thead>
+            <tbody>
+              <tr><td>冲压</td><td>冯玉珍</td><td class="num">72</td><td class="num">1.57</td><td class="num">0</td></tr>
+              <tr><td>装配</td><td>赵国庆</td><td class="num">341</td><td class="num">3.07</td><td class="num">1</td></tr>
+              <tr><td>冲压</td><td>孙丽华</td><td class="num">58</td><td class="num">2.27</td><td class="num">0</td></tr>
+            </tbody>
+          </table></div>
+          <div style="display:flex; gap:8px; margin-top:16px">
+            <button class="btn" style="flex:1; justify-content:center">重选文件</button>
+            <button class="btn btn-primary" style="flex:1; justify-content:center">确认导入 42 条</button>
+          </div>
+        </div>
+        <div class="tabbar">
+          <div class="tab on"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M12 12v6M9 15l3 3 3-3"/></svg>导入</div>
+          <div class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>工票</div>
+          <div class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg>核算</div>
+          <div class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>工资条</div>
+          <div class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5M12 7v5l4 2"/></svg>历史</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 屏2 工票 -->
+    <div class="phone">
+      <div class="phone-cap"><span>② 工票</span><span>列表</span></div>
+      <div class="screen">
+        <div class="appbar"><span class="name">算件</span></div>
+        <div class="content">
+          <div class="sect">本期工票 · 共 6 张 · 合计 ¥12,804.33</div>
+          <div class="card">
+            <div class="ticket"><div><div class="no">SJ-2026748</div><div class="meta">冲压车间 · 09-12 · 5 行</div></div><div class="money" style="font-size:13px;font-weight:500">¥2,114.91</div></div>
+            <div class="ticket"><div><div class="no">SJ-2026226</div><div class="meta">装配车间 · 09-13 · 5 行</div></div><div class="money" style="font-size:13px;font-weight:500">¥2,097.76</div></div>
+            <div class="ticket"><div><div class="no">SJ-2026272</div><div class="meta">冲压车间 · 09-02 · 7 行</div></div><div class="money" style="font-size:13px;font-weight:500">¥2,257.32</div></div>
+            <div class="ticket"><div><div class="no">SJ-2026193</div><div class="meta">装配车间 · 09-15 · 6 行</div></div><div class="money" style="font-size:13px;font-weight:500">¥2,468.20</div></div>
+            <div class="ticket"><div><div class="no">SJ-2026337</div><div class="meta">冲压车间 · 09-16 · 5 行</div></div><div class="money" style="font-size:13px;font-weight:500">¥1,872.54</div></div>
+          </div>
+          <div class="sect">点单张可展开行明细</div>
+          <div class="card"><table>
+            <thead><tr><th>工序</th><th>姓名</th><th class="num">数量</th><th class="num">废品</th><th class="num">金额</th></tr></thead>
+            <tbody>
+              <tr><td>冲压</td><td>冯玉珍</td><td class="num">72</td><td class="num">0</td><td class="num money">¥113.04</td></tr>
+              <tr><td>装配</td><td>赵国庆</td><td class="num">341</td><td class="num">1</td><td class="num money">¥1,044.27</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+        <div class="tabbar">
+          <div class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M12 12v6M9 15l3 3 3-3"/></svg>导入</div>
+          <div class="tab on"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>工票</div>
+          <div class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg>核算</div>
+          <div class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>工资条</div>
+          <div class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5M12 7v5l4 2"/></svg>历史</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 屏3 核算 -->
+    <div class="phone">
+      <div class="phone-cap"><span>③ 核算</span><span>结果表</span></div>
+      <div class="screen">
+        <div class="appbar"><span class="name">算件</span></div>
+        <div class="content">
+          <div class="card" style="padding:12px">
+            <div class="kv"><span class="muted">核算期间（月切日）</span><span>08-26 → 09-25</span></div>
+            <div class="kv"><span class="muted">口径</span><span>江苏版 · 个人计件</span></div>
+            <div class="kv"><span class="muted">工票</span><span>6 张 · 33 行</span></div>
+          </div>
+          <div style="margin-top:12px"><button class="btn btn-primary" style="width:100%; justify-content:center">重新核算</button></div>
+          <div class="sect">按工人汇总</div>
+          <div class="card"><table>
+            <thead><tr><th>工人</th><th class="num">数量</th><th class="num">废品</th><th class="num">计件工资</th></tr></thead>
+            <tbody>
+              <tr><td>赵国庆</td><td class="num">908</td><td class="num">6</td><td class="num money">¥2,364.06</td></tr>
+              <tr><td>冯玉珍</td><td class="num">352</td><td class="num">0</td><td class="num money">¥641.84</td></tr>
+              <tr><td>王建国</td><td class="num">558</td><td class="num">5</td><td class="num money">¥1,177.49</td></tr>
+              <tr><td>陈小红</td><td class="num">498</td><td class="num">2</td><td class="num money">¥843.30</td></tr>
+              <tr><td style="color:var(--text-3)">合计</td><td class="num" style="color:var(--text-3)">—</td><td class="num" style="color:var(--text-3)">—</td><td class="num money" style="color:var(--text-3)">¥12,804.33</td></tr>
+            </tbody>
+          </table></div>
+          <div class="sect">报废对账：应产 / 实报 / 报废 / 下落不明 已对平，无差异</div>
+        </div>
+        <div class="tabbar">
+          <div class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M12 12v6M9 15l3 3 3-3"/></svg>导入</div>
+          <div class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>工票</div>
+          <div class="tab on"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg>核算</div>
+          <div class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>工资条</div>
+          <div class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5M12 7v5l4 2"/></svg>历史</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 屏4 工资条 -->
+    <div class="phone">
+      <div class="phone-cap"><span>④ 工资条</span><span>预览（展开一条）</span></div>
+      <div class="screen">
+        <div class="appbar"><span class="name">算件</span></div>
+        <div class="content">
+          <div class="sect">8 名工人 · 点开看明细 · 个税为演示口径</div>
+          <div class="card">
+            <div class="row" style="justify-content:space-between"><span style="font-weight:500">赵国庆</span><span class="money" style="font-weight:500">实发 ¥2,289.06</span></div>
+          </div>
+          <div class="card" style="margin-top:8px">
+            <div class="row" style="justify-content:space-between"><span style="font-weight:500">冯玉珍</span><span class="money" style="font-weight:500">实发 ¥641.84</span></div>
+            <div style="border-top:1px solid var(--line); padding:12px">
+              <div class="kv"><span class="muted">计件工资</span><span class="money">¥641.84</span></div>
+              <div class="kv"><span class="muted">个税（演示口径）</span><span class="money">¥0.00</span></div>
+              <div class="kv" style="font-weight:500"><span>实发</span><span class="money">¥641.84</span></div>
+              <div style="font-size:10px;color:var(--text-3);margin-top:8px">明细：冲压 352 件 × ¥1.82（2 张工票）</div>
+            </div>
+          </div>
+          <div class="card" style="margin-top:8px">
+            <div class="row" style="justify-content:space-between"><span style="font-weight:500">王建国</span><span class="money" style="font-weight:500">实发 ¥1,177.49</span></div>
+          </div>
+        </div>
+        <div class="tabbar">
+          <div class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M12 12v6M9 15l3 3 3-3"/></svg>导入</div>
+          <div class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>工票</div>
+          <div class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg>核算</div>
+          <div class="tab on"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>工资条</div>
+          <div class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5M12 7v5l4 2"/></svg>历史</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 屏5 历史 -->
+    <div class="phone">
+      <div class="phone-cap"><span>⑤ 历史</span><span>核算批次</span></div>
+      <div class="screen">
+        <div class="appbar"><span class="name">算件</span></div>
+        <div class="content">
+          <div class="sect">每次核算留一条记录，可回看</div>
+          <div class="card">
+            <div class="ticket"><div><div class="no">09-25 期 <span class="badge badge-ok" style="margin-left:4px"><span class="dot"></span>已核算</span></div><div class="meta">09-19 14:32 · 6 张工票 · 8 人</div></div><div class="money" style="font-size:13px;font-weight:500">¥12,804.33</div></div>
+            <div class="ticket"><div><div class="no">08-25 期 <span class="badge badge-ok" style="margin-left:4px"><span class="dot"></span>已核算</span></div><div class="meta">08-26 09:15 · 9 张工票 · 8 人</div></div><div class="money" style="font-size:13px;font-weight:500">¥15,372.60</div></div>
+            <div class="ticket"><div><div class="no">07-25 期 <span class="badge badge-ok" style="margin-left:4px"><span class="dot"></span>已核算</span></div><div class="meta">07-25 17:40 · 8 张工票 · 7 人</div></div><div class="money" style="font-size:13px;font-weight:500">¥13,018.75</div></div>
+          </div>
+        </div>
+        <div class="tabbar">
+          <div class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M12 12v6M9 15l3 3 3-3"/></svg>导入</div>
+          <div class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>工票</div>
+          <div class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg>核算</div>
+          <div class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>工资条</div>
+          <div class="tab on"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5M12 7v5l4 2"/></svg>历史</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>06 桌面布局（≥820px）</h2>
+  <div class="note">底栏变左侧栏，内容列最宽 720px 居中；其余组件不变。</div>
+  <div class="desk">
+    <div class="side">
+      <div style="font-size:15px;font-weight:600;padding:0 12px 12px">算件</div>
+      <div class="item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M12 12v6M9 15l3 3 3-3"/></svg>导入</div>
+      <div class="item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>工票</div>
+      <div class="item on"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg>核算</div>
+      <div class="item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>工资条</div>
+      <div class="item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5M12 7v5l4 2"/></svg>历史</div>
+    </div>
+    <div class="main">
+      <div style="font-size:14px;font-weight:600;margin-bottom:4px">核算 · 09-25 期</div>
+      <div style="font-size:11px;color:var(--text-3);margin-bottom:16px">期间 2026-08-26 → 2026-09-25 · 江苏版 · 个人计件</div>
+      <div class="card" style="max-width:720px"><table>
+        <thead><tr><th>工人</th><th class="num">数量</th><th class="num">废品</th><th class="num">计件工资</th></tr></thead>
+        <tbody>
+          <tr><td>赵国庆</td><td class="num">908</td><td class="num">6</td><td class="num money">¥2,364.06</td></tr>
+          <tr><td>冯玉珍</td><td class="num">352</td><td class="num">0</td><td class="num money">¥641.84</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

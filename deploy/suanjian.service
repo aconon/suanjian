@@ -1,0 +1,19 @@
+[Unit]
+Description=SuanJian piece-rate wage calculator
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/suanjian
+Environment=SUANJIAN_PORT=8743
+# 安全提示：下面这行 SUANJIAN_LAN=1 会把数据开放给同一网络的所有设备——
+# 启用前必须先配好口令：/opt/suanjian/data/config.json 写 {"code": "六位以上口令"}
+#（口令支持中文；不配口令就开 LAN = 同网任何设备都能直接看到数据）
+Environment=SUANJIAN_LAN=1
+ExecStart=/usr/bin/python3 /opt/suanjian/server.py
+Restart=always
+RestartSec=3
+MemoryMax=300M
+
+[Install]
+WantedBy=multi-user.target

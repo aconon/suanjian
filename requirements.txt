@@ -1,0 +1,7 @@
+# 算件依赖清单
+# 运行零依赖 = python3 标准库（HTTP / SQLite / CSV 全内置），无需 pip install 即可跑：
+#   python3 server.py
+# 开发依赖：pytest、pyinstaller（仅跑测试 / 打包时需要）
+#   pip3 install -r requirements.txt
+pytest
+pyinstaller

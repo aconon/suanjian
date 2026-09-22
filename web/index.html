@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>算件 · 计件工资核算台</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+
+  <header class="appbar">
+    <div class="brand">
+      <span class="name">算件</span>
+      <span class="tagline">计件工资核算台</span>
+    </div>
+    <span id="demoBadge" class="badge" hidden>演示数据</span>
+  </header>
+
+  <nav class="tabbar" id="tabbar" aria-label="主导航">
+    <a class="tab" href="#/import" data-route="import">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M12 12v6M9 15l3 3 3-3"/></svg>
+      <span>导入</span>
+    </a>
+    <a class="tab" href="#/tickets" data-route="tickets">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>
+      <span>工票</span>
+    </a>
+    <a class="tab" href="#/calc" data-route="calc">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8"/><path d="M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg>
+      <span>核算</span>
+    </a>
+    <a class="tab" href="#/payslip" data-route="payslip">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
+      <span>工资条</span>
+    </a>
+    <a class="tab" href="#/trend" data-route="trend">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m7 14 4-4 4 4 5-5"/></svg>
+      <span>趋势</span>
+    </a>
+    <a class="tab" href="#/compare" data-route="compare">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><path d="M11 18H8a2 2 0 0 1-2-2V9"/></svg>
+      <span>对比</span>
+    </a>
+    <a class="tab" href="#/history" data-route="history">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5M12 7v5l4 2"/></svg>
+      <span>历史</span>
+    </a>
+    <a class="tab" href="#/settings" data-route="settings">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+      <span>设置</span>
+    </a>
+  </nav>
+
+  <main class="content" id="main">
+    <section class="view" id="view-import" hidden></section>
+    <section class="view" id="view-tickets" hidden></section>
+    <section class="view" id="view-calc" hidden></section>
+    <section class="view" id="view-payslip" hidden></section>
+    <section class="view" id="view-trend" hidden></section>
+    <section class="view" id="view-compare" hidden></section>
+    <section class="view" id="view-history" hidden></section>
+    <section class="view" id="view-settings" hidden></section>
+  </main>
+
+</div>
+
+<div id="toast" role="status"></div>
+
+<!-- 口令门浮层（任务单 07）：服务端 config.json 设了 code 才会弹；输对存 sessionStorage 不再问 -->
+<div id="codeGate" class="code-gate" hidden role="dialog" aria-modal="true" aria-labelledby="codeTitle">
+  <div class="code-card">
+    <div class="code-title" id="codeTitle">输入访问口令</div>
+    <div class="code-desc">这台算件设了口令，问一下家里管账的人要一下。</div>
+    <input id="codeInput" class="input code-input" type="password" autocomplete="off"
+           inputmode="text" placeholder="访问口令" aria-label="访问口令">
+    <div class="code-err" id="codeErr" hidden></div>
+    <button class="btn btn-primary btn-block" id="codeSubmit" data-act="code-submit">进入</button>
+  </div>
+</div>
+
+<noscript>
+  <div style="padding:16px">这个页面需要开启 JavaScript 才能使用。</div>
+</noscript>
+
+<script src="demo-data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

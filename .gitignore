@@ -1,0 +1,21 @@
+delivery-report.md
+delivery-report.json
+.pytest_cache/
+data/
+
+# 密钥/敏感配置不入库
+.env
+*.key
+config*.json
+
+# 构建与备份产物（源码入库，产物不入库）
+dist/
+build/
+backups/
+
+# 内部工程文档（文件留盘，不入公开仓）
+AGENTS.md
+docs/任务单/
+docs/审查单/
+docs/会话台账-0919-算件冲刺.md
+docs/精度门-Day0.md

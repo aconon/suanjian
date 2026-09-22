@@ -1,0 +1,34 @@
+name: build-exe
+
+# push tag（v*）自动打 Windows 单文件 exe；也可手动触发（workflow_dispatch）。
+# 本地等价入口=tools/build_exe.command（bash；Windows 上跑需 git-bash）——
+# CI 是 Windows runner，不走 .command，直接调 PyInstaller：
+# 资源清单单一事实源=suanjian.spec（R9-F11：spec 与 .command 双入口同步维护，
+# 这里用 spec 构建，不给清单添第三份拷贝）。
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+      - name: 打包 exe
+        env:
+          PYTHONIOENCODING: utf-8
+          PYTHONUTF8: "1"
+        run: python -m PyInstaller --noconfirm --clean suanjian.spec
+      - name: 上传产物
+        uses: actions/upload-artifact@v4
+        with:
+          name: suanjian-windows-exe
+          path: dist/suanjian.exe
+          if-no-files-found: error

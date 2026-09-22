@@ -1,0 +1,9 @@
+# 算件 · 最小项目元数据（运行零依赖，python3 标准库）
+[project]
+name = "suanjian"
+version = "1.0.0"
+description = "计件工资 AI 核算台（python3 标准库 HTTP + SQLite，运行零依赖）"
+requires-python = ">=3.9"
+
+[project.optional-dependencies]
+dev = ["pytest", "pyinstaller"]

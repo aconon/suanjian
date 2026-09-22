@@ -1,0 +1,1567 @@
+{
+ "sheet_A_01.png": {
+  "tier": "A",
+  "sheet_no": "SJ-2026748",
+  "workshop": "冲压车间",
+  "date": "2026-09-12",
+  "rows": [
+   {
+    "process": "冲压",
+    "name": "冯玉珍",
+    "qty": 72,
+    "unit_price": 1.57,
+    "defect": 0
+   },
+   {
+    "process": "装配",
+    "name": "赵国庆",
+    "qty": 341,
+    "unit_price": 3.07,
+    "defect": 1
+   },
+   {
+    "process": "冲压",
+    "name": "孙丽华",
+    "qty": 58,
+    "unit_price": 2.27,
+    "defect": 0
+   },
+   {
+    "process": "冲压",
+    "name": "吴春梅",
+    "qty": 176,
+    "unit_price": 2.7,
+    "defect": 0
+   },
+   {
+    "process": "焊接",
+    "name": "陈小红",
+    "qty": 206,
+    "unit_price": 1.69,
+    "defect": 0
+   }
+  ],
+  "total_amount": 2114.91
+ },
+ "sheet_A_02.png": {
+  "tier": "A",
+  "sheet_no": "SJ-2026467",
+  "workshop": "装配车间",
+  "date": "2026-09-22",
+  "rows": [
+   {
+    "process": "喷漆",
+    "name": "李秀兰",
+    "qty": 286,
+    "unit_price": 0.7,
+    "defect": 0
+   },
+   {
+    "process": "打磨",
+    "name": "刘志强",
+    "qty": 102,
+    "unit_price": 2.33,
+    "defect": 1
+   },
+   {
+    "process": "攻丝",
+    "name": "孙丽华",
+    "qty": 129,
+    "unit_price": 0.97,
+    "defect": 0
+   },
+   {
+    "process": "焊接",
+    "name": "冯玉珍",
+    "qty": 102,
+    "unit_price": 1.37,
+    "defect": 0
+   },
+   {
+    "process": "装配",
+    "name": "王建国",
+    "qty": 255,
+    "unit_price": 3.14,
+    "defect": 4
+   },
+   {
+    "process": "打磨",
+    "name": "张卫东",
+    "qty": 461,
+    "unit_price": 1.37,
+    "defect": 0
+   },
+   {
+    "process": "打磨",
+    "name": "郑海涛",
+    "qty": 407,
+    "unit_price": 0.83,
+    "defect": 0
+   }
+  ],
+  "total_amount": 2472.81
+ },
+ "sheet_A_03.png": {
+  "tier": "A",
+  "sheet_no": "SJ-2026515",
+  "workshop": "装配车间",
+  "date": "2026-09-20",
+  "rows": [
+   {
+    "process": "冲压",
+    "name": "王建国",
+    "qty": 401,
+    "unit_price": 2.76,
+    "defect": 4
+   },
+   {
+    "process": "裁剪",
+    "name": "郑海涛",
+    "qty": 384,
+    "unit_price": 2.94,
+    "defect": 0
+   },
+   {
+    "process": "焊接",
+    "name": "赵国庆",
+    "qty": 187,
+    "unit_price": 2.05,
+    "defect": 0
+   },
+   {
+    "process": "折弯",
+    "name": "孙丽华",
+    "qty": 229,
+    "unit_price": 1.88,
+    "defect": 0
+   },
+   {
+    "process": "装配",
+    "name": "张卫东",
+    "qty": 453,
+    "unit_price": 3.02,
+    "defect": 0
+   },
+   {
+    "process": "折弯",
+    "name": "吴春梅",
+    "qty": 187,
+    "unit_price": 1.74,
+    "defect": 4
+   }
+  ],
+  "total_amount": 4743.03
+ },
+ "sheet_A_04.png": {
+  "tier": "A",
+  "sheet_no": "SJ-2026708",
+  "workshop": "装配车间",
+  "date": "2026-09-11",
+  "rows": [
+   {
+    "process": "打磨",
+    "name": "陈小红",
+    "qty": 111,
+    "unit_price": 1.04,
+    "defect": 0
+   },
+   {
+    "process": "装配",
+    "name": "周建军",
+    "qty": 386,
+    "unit_price": 2.66,
+    "defect": 0
+   },
+   {
+    "process": "攻丝",
+    "name": "张卫东",
+    "qty": 348,
+    "unit_price": 2.17,
+    "defect": 0
+   },
+   {
+    "process": "装配",
+    "name": "赵国庆",
+    "qty": 150,
+    "unit_price": 3.07,
+    "defect": 1
+   },
+   {
+    "process": "喷漆",
+    "name": "冯玉珍",
+    "qty": 297,
+    "unit_price": 2.43,
+    "defect": 0
+   },
+   {
+    "process": "喷漆",
+    "name": "蒋大明",
+    "qty": 307,
+    "unit_price": 2.02,
+    "defect": 0
+   }
+  ],
+  "total_amount": 3699.71
+ },
+ "sheet_A_05.png": {
+  "tier": "A",
+  "sheet_no": "SJ-2026442",
+  "workshop": "钣金车间",
+  "date": "2026-09-13",
+  "rows": [
+   {
+    "process": "折弯",
+    "name": "孙丽华",
+    "qty": 169,
+    "unit_price": 1.71,
+    "defect": 0
+   },
+   {
+    "process": "焊接",
+    "name": "吴春梅",
+    "qty": 395,
+    "unit_price": 3.12,
+    "defect": 4
+   },
+   {
+    "process": "裁剪",
+    "name": "郑海涛",
+    "qty": 94,
+    "unit_price": 1.86,
+    "defect": 0
+   },
+   {
+    "process": "冲压",
+    "name": "陈小红",
+    "qty": 407,
+    "unit_price": 0.64,
+    "defect": 0
+   },
+   {
+    "process": "打磨",
+    "name": "蒋大明",
+    "qty": 416,
+    "unit_price": 0.99,
+    "defect": 0
+   },
+   {
+    "process": "喷漆",
+    "name": "王建国",
+    "qty": 311,
+    "unit_price": 2.39,
+    "defect": 0
+   },
+   {
+    "process": "攻丝",
+    "name": "冯玉珍",
+    "qty": 279,
+    "unit_price": 2.19,
+    "defect": 0
+   }
+  ],
+  "total_amount": 3722.85
+ },
+ "sheet_A_06.png": {
+  "tier": "A",
+  "sheet_no": "SJ-2026818",
+  "workshop": "装配车间",
+  "date": "2026-09-21",
+  "rows": [
+   {
+    "process": "折弯",
+    "name": "孙丽华",
+    "qty": 42,
+    "unit_price": 0.5,
+    "defect": 0
+   },
+   {
+    "process": "裁剪",
+    "name": "蒋大明",
+    "qty": 51,
+    "unit_price": 1.41,
+    "defect": 0
+   },
+   {
+    "process": "冲压",
+    "name": "周建军",
+    "qty": 411,
+    "unit_price": 1.26,
+    "defect": 0
+   },
+   {
+    "process": "折弯",
+    "name": "张卫东",
+    "qty": 439,
+    "unit_price": 2.95,
+    "defect": 0
+   },
+   {
+    "process": "装配",
+    "name": "吴春梅",
+    "qty": 377,
+    "unit_price": 1.47,
+    "defect": 0
+   },
+   {
+    "process": "装配",
+    "name": "王建国",
+    "qty": 382,
+    "unit_price": 2.8,
+    "defect": 0
+   }
+  ],
+  "total_amount": 3529.61
+ },
+ "sheet_A_07.png": {
+  "tier": "A",
+  "sheet_no": "SJ-2026704",
+  "workshop": "装配车间",
+  "date": "2026-09-05",
+  "rows": [
+   {
+    "process": "裁剪",
+    "name": "王建国",
+    "qty": 302,
+    "unit_price": 1.88,
+    "defect": 0
+   },
+   {
+    "process": "冲压",
+    "name": "陈小红",
+    "qty": 190,
+    "unit_price": 0.51,
+    "defect": 2
+   },
+   {
+    "process": "喷漆",
+    "name": "郑海涛",
+    "qty": 299,
+    "unit_price": 2.53,
+    "defect": 2
+   },
+   {
+    "process": "折弯",
+    "name": "孙丽华",
+    "qty": 170,
+    "unit_price": 0.97,
+    "defect": 2
+   },
+   {
+    "process": "打磨",
+    "name": "刘志强",
+    "qty": 181,
+    "unit_price": 1.23,
+    "defect": 0
+   }
+  ],
+  "total_amount": 1808.66
+ },
+ "sheet_A_08.png": {
+  "tier": "A",
+  "sheet_no": "SJ-2026294",
+  "workshop": "装配车间",
+  "date": "2026-09-08",
+  "rows": [
+   {
+    "process": "打磨",
+    "name": "郑海涛",
+    "qty": 87,
+    "unit_price": 1.67,
+    "defect": 0
+   },
+   {
+    "process": "攻丝",
+    "name": "刘志强",
+    "qty": 325,
+    "unit_price": 0.41,
+    "defect": 4
+   },
+   {
+    "process": "喷漆",
+    "name": "蒋大明",
+    "qty": 361,
+    "unit_price": 1.25,
+    "defect": 0
+   },
+   {
+    "process": "装配",
+    "name": "赵国庆",
+    "qty": 445,
+    "unit_price": 2.9,
+    "defect": 2
+   },
+   {
+    "process": "裁剪",
+    "name": "王建国",
+    "qty": 342,
+    "unit_price": 1.05,
+    "defect": 0
+   },
+   {
+    "process": "打磨",
+    "name": "吴春梅",
+    "qty": 62,
+    "unit_price": 1.47,
+    "defect": 0
+   },
+   {
+    "process": "攻丝",
+    "name": "陈小红",
+    "qty": 217,
+    "unit_price": 1.39,
+    "defect": 0
+   }
+  ],
+  "total_amount": 2772.16
+ },
+ "sheet_A_09.png": {
+  "tier": "A",
+  "sheet_no": "SJ-2026878",
+  "workshop": "装配车间",
+  "date": "2026-09-07",
+  "rows": [
+   {
+    "process": "攻丝",
+    "name": "周建军",
+    "qty": 102,
+    "unit_price": 1.39,
+    "defect": 0
+   },
+   {
+    "process": "焊接",
+    "name": "张卫东",
+    "qty": 266,
+    "unit_price": 3.05,
+    "defect": 0
+   },
+   {
+    "process": "折弯",
+    "name": "刘志强",
+    "qty": 318,
+    "unit_price": 2.37,
+    "defect": 0
+   },
+   {
+    "process": "折弯",
+    "name": "郑海涛",
+    "qty": 394,
+    "unit_price": 2.13,
+    "defect": 0
+   },
+   {
+    "process": "装配",
+    "name": "吴春梅",
+    "qty": 280,
+    "unit_price": 2.25,
+    "defect": 0
+   },
+   {
+    "process": "裁剪",
+    "name": "冯玉珍",
+    "qty": 362,
+    "unit_price": 2.94,
+    "defect": 0
+   }
+  ],
+  "total_amount": 4240.24
+ },
+ "sheet_A_10.png": {
+  "tier": "A",
+  "sheet_no": "SJ-2026665",
+  "workshop": "钣金车间",
+  "date": "2026-09-25",
+  "rows": [
+   {
+    "process": "裁剪",
+    "name": "孙丽华",
+    "qty": 293,
+    "unit_price": 1.77,
+    "defect": 0
+   },
+   {
+    "process": "打磨",
+    "name": "冯玉珍",
+    "qty": 275,
+    "unit_price": 0.98,
+    "defect": 0
+   },
+   {
+    "process": "冲压",
+    "name": "郑海涛",
+    "qty": 454,
+    "unit_price": 0.85,
+    "defect": 0
+   },
+   {
+    "process": "喷漆",
+    "name": "李秀兰",
+    "qty": 115,
+    "unit_price": 2.13,
+    "defect": 1
+   },
+   {
+    "process": "装配",
+    "name": "陈小红",
+    "qty": 204,
+    "unit_price": 2.33,
+    "defect": 0
+   }
+  ],
+  "total_amount": 1894.28
+ },
+ "sheet_B_01.png": {
+  "tier": "B",
+  "sheet_no": "SJ-2026226",
+  "workshop": "装配车间",
+  "date": "2026-09-13",
+  "rows": [
+   {
+    "process": "装配",
+    "name": "周建军",
+    "qty": 165,
+    "unit_price": 1.01,
+    "defect": 0
+   },
+   {
+    "process": "装配",
+    "name": "王建国",
+    "qty": 380,
+    "unit_price": 3.17,
+    "defect": 5
+   },
+   {
+    "process": "裁剪",
+    "name": "李秀兰",
+    "qty": 199,
+    "unit_price": 2.56,
+    "defect": 0
+   },
+   {
+    "process": "攻丝",
+    "name": "赵国庆",
+    "qty": 91,
+    "unit_price": 1.89,
+    "defect": 0
+   },
+   {
+    "process": "打磨",
+    "name": "刘志强",
+    "qty": 49,
+    "unit_price": 0.92,
+    "defect": 6
+   }
+  ],
+  "total_amount": 2097.76
+ },
+ "sheet_B_02.png": {
+  "tier": "B",
+  "sheet_no": "SJ-2026265",
+  "workshop": "钣金车间",
+  "date": "2026-09-04",
+  "rows": [
+   {
+    "process": "装配",
+    "name": "赵国庆",
+    "qty": 401,
+    "unit_price": 1.38,
+    "defect": 0
+   },
+   {
+    "process": "攻丝",
+    "name": "吴春梅",
+    "qty": 110,
+    "unit_price": 0.39,
+    "defect": 0
+   },
+   {
+    "process": "折弯",
+    "name": "孙丽华",
+    "qty": 454,
+    "unit_price": 0.69,
+    "defect": 3
+   },
+   {
+    "process": "裁剪",
+    "name": "郑海涛",
+    "qty": 398,
+    "unit_price": 1.93,
+    "defect": 0
+   },
+   {
+    "process": "裁剪",
+    "name": "张卫东",
+    "qty": 120,
+    "unit_price": 2.6,
+    "defect": 3
+   },
+   {
+    "process": "裁剪",
+    "name": "蒋大明",
+    "qty": 208,
+    "unit_price": 3.1,
+    "defect": 0
+   }
+  ],
+  "total_amount": 2634.48
+ },
+ "sheet_B_03.png": {
+  "tier": "B",
+  "sheet_no": "SJ-2026232",
+  "workshop": "钣金车间",
+  "date": "2026-09-25",
+  "rows": [
+   {
+    "process": "装配",
+    "name": "冯玉珍",
+    "qty": 435,
+    "unit_price": 3.17,
+    "defect": 0
+   },
+   {
+    "process": "装配",
+    "name": "吴春梅",
+    "qty": 260,
+    "unit_price": 2.56,
+    "defect": 6
+   },
+   {
+    "process": "攻丝",
+    "name": "孙丽华",
+    "qty": 473,
+    "unit_price": 2.57,
+    "defect": 0
+   },
+   {
+    "process": "装配",
+    "name": "郑海涛",
+    "qty": 134,
+    "unit_price": 2.67,
+    "defect": 0
+   },
+   {
+    "process": "攻丝",
+    "name": "张卫东",
+    "qty": 71,
+    "unit_price": 0.89,
+    "defect": 0
+   }
+  ],
+  "total_amount": 3681.13
+ },
+ "sheet_B_04.png": {
+  "tier": "B",
+  "sheet_no": "SJ-2026908",
+  "workshop": "装配车间",
+  "date": "2026-09-12",
+  "rows": [
+   {
+    "process": "装配",
+    "name": "张卫东",
+    "qty": 106,
+    "unit_price": 1.56,
+    "defect": 5
+   },
+   {
+    "process": "焊接",
+    "name": "王建国",
+    "qty": 101,
+    "unit_price": 3.16,
+    "defect": 0
+   },
+   {
+    "process": "冲压",
+    "name": "陈小红",
+    "qty": 112,
+    "unit_price": 2.31,
+    "defect": 5
+   },
+   {
+    "process": "攻丝",
+    "name": "赵国庆",
+    "qty": 265,
+    "unit_price": 0.91,
+    "defect": 0
+   },
+   {
+    "process": "喷漆",
+    "name": "周建军",
+    "qty": 109,
+    "unit_price": 2.32,
+    "defect": 0
+   },
+   {
+    "process": "折弯",
+    "name": "蒋大明",
+    "qty": 336,
+    "unit_price": 2.22,
+    "defect": 6
+   }
+  ],
+  "total_amount": 1983.19
+ },
+ "sheet_B_05.png": {
+  "tier": "B",
+  "sheet_no": "SJ-2026381",
+  "workshop": "冲压车间",
+  "date": "2026-09-12",
+  "rows": [
+   {
+    "process": "喷漆",
+    "name": "郑海涛",
+    "qty": 431,
+    "unit_price": 2.2,
+    "defect": 0
+   },
+   {
+    "process": "喷漆",
+    "name": "吴春梅",
+    "qty": 211,
+    "unit_price": 1.42,
+    "defect": 0
+   },
+   {
+    "process": "打磨",
+    "name": "王建国",
+    "qty": 287,
+    "unit_price": 0.89,
+    "defect": 0
+   },
+   {
+    "process": "焊接",
+    "name": "张卫东",
+    "qty": 427,
+    "unit_price": 2.39,
+    "defect": 0
+   },
+   {
+    "process": "折弯",
+    "name": "蒋大明",
+    "qty": 192,
+    "unit_price": 1.16,
+    "defect": 2
+   },
+   {
+    "process": "焊接",
+    "name": "刘志强",
+    "qty": 397,
+    "unit_price": 1.63,
+    "defect": 0
+   },
+   {
+    "process": "冲压",
+    "name": "李秀兰",
+    "qty": 231,
+    "unit_price": 1.0,
+    "defect": 0
+   }
+  ],
+  "total_amount": 3624.61
+ },
+ "sheet_B_06.png": {
+  "tier": "B",
+  "sheet_no": "SJ-2026442",
+  "workshop": "装配车间",
+  "date": "2026-09-04",
+  "rows": [
+   {
+    "process": "打磨",
+    "name": "吴春梅",
+    "qty": 85,
+    "unit_price": 2.14,
+    "defect": 4
+   },
+   {
+    "process": "打磨",
+    "name": "陈小红",
+    "qty": 49,
+    "unit_price": 0.83,
+    "defect": 0
+   },
+   {
+    "process": "冲压",
+    "name": "冯玉珍",
+    "qty": 46,
+    "unit_price": 2.62,
+    "defect": 0
+   },
+   {
+    "process": "冲压",
+    "name": "王建国",
+    "qty": 245,
+    "unit_price": 1.19,
+    "defect": 0
+   },
+   {
+    "process": "喷漆",
+    "name": "孙丽华",
+    "qty": 285,
+    "unit_price": 2.38,
+    "defect": 0
+   }
+  ],
+  "total_amount": 1312.94
+ },
+ "sheet_B_07.png": {
+  "tier": "B",
+  "sheet_no": "SJ-2026238",
+  "workshop": "冲压车间",
+  "date": "2026-09-23",
+  "rows": [
+   {
+    "process": "焊接",
+    "name": "陈小红",
+    "qty": 361,
+    "unit_price": 1.53,
+    "defect": 0
+   },
+   {
+    "process": "装配",
+    "name": "冯玉珍",
+    "qty": 263,
+    "unit_price": 1.98,
+    "defect": 0
+   },
+   {
+    "process": "装配",
+    "name": "周建军",
+    "qty": 263,
+    "unit_price": 1.22,
+    "defect": 0
+   },
+   {
+    "process": "攻丝",
+    "name": "郑海涛",
+    "qty": 178,
+    "unit_price": 2.33,
+    "defect": 0
+   },
+   {
+    "process": "折弯",
+    "name": "吴春梅",
+    "qty": 453,
+    "unit_price": 1.35,
+    "defect": 2
+   },
+   {
+    "process": "喷漆",
+    "name": "刘志强",
+    "qty": 286,
+    "unit_price": 2.49,
+    "defect": 0
+   }
+  ],
+  "total_amount": 3132.36
+ },
+ "sheet_B_08.png": {
+  "tier": "B",
+  "sheet_no": "SJ-2026810",
+  "workshop": "冲压车间",
+  "date": "2026-09-07",
+  "rows": [
+   {
+    "process": "打磨",
+    "name": "冯玉珍",
+    "qty": 385,
+    "unit_price": 2.36,
+    "defect": 0
+   },
+   {
+    "process": "折弯",
+    "name": "蒋大明",
+    "qty": 103,
+    "unit_price": 2.18,
+    "defect": 0
+   },
+   {
+    "process": "焊接",
+    "name": "刘志强",
+    "qty": 412,
+    "unit_price": 1.38,
+    "defect": 0
+   },
+   {
+    "process": "喷漆",
+    "name": "王建国",
+    "qty": 445,
+    "unit_price": 2.4,
+    "defect": 0
+   },
+   {
+    "process": "焊接",
+    "name": "周建军",
+    "qty": 332,
+    "unit_price": 1.77,
+    "defect": 0
+   },
+   {
+    "process": "喷漆",
+    "name": "赵国庆",
+    "qty": 463,
+    "unit_price": 0.57,
+    "defect": 0
+   },
+   {
+    "process": "打磨",
+    "name": "陈小红",
+    "qty": 53,
+    "unit_price": 1.61,
+    "defect": 0
+   }
+  ],
+  "total_amount": 3706.58
+ },
+ "sheet_B_09.png": {
+  "tier": "B",
+  "sheet_no": "SJ-2026452",
+  "workshop": "装配车间",
+  "date": "2026-09-21",
+  "rows": [
+   {
+    "process": "冲压",
+    "name": "冯玉珍",
+    "qty": 419,
+    "unit_price": 2.82,
+    "defect": 0
+   },
+   {
+    "process": "装配",
+    "name": "王建国",
+    "qty": 162,
+    "unit_price": 3.07,
+    "defect": 0
+   },
+   {
+    "process": "打磨",
+    "name": "张卫东",
+    "qty": 315,
+    "unit_price": 0.67,
+    "defect": 0
+   },
+   {
+    "process": "打磨",
+    "name": "蒋大明",
+    "qty": 141,
+    "unit_price": 2.22,
+    "defect": 0
+   },
+   {
+    "process": "喷漆",
+    "name": "赵国庆",
+    "qty": 87,
+    "unit_price": 2.3,
+    "defect": 0
+   },
+   {
+    "process": "打磨",
+    "name": "周建军",
+    "qty": 286,
+    "unit_price": 0.47,
+    "defect": 0
+   }
+  ],
+  "total_amount": 2537.51
+ },
+ "sheet_B_10.png": {
+  "tier": "B",
+  "sheet_no": "SJ-2026969",
+  "workshop": "装配车间",
+  "date": "2026-09-18",
+  "rows": [
+   {
+    "process": "冲压",
+    "name": "冯玉珍",
+    "qty": 203,
+    "unit_price": 3.16,
+    "defect": 0
+   },
+   {
+    "process": "装配",
+    "name": "郑海涛",
+    "qty": 135,
+    "unit_price": 0.54,
+    "defect": 5
+   },
+   {
+    "process": "裁剪",
+    "name": "张卫东",
+    "qty": 309,
+    "unit_price": 3.17,
+    "defect": 0
+   },
+   {
+    "process": "焊接",
+    "name": "蒋大明",
+    "qty": 289,
+    "unit_price": 0.97,
+    "defect": 0
+   },
+   {
+    "process": "喷漆",
+    "name": "陈小红",
+    "qty": 218,
+    "unit_price": 2.97,
+    "defect": 0
+   },
+   {
+    "process": "攻丝",
+    "name": "赵国庆",
+    "qty": 420,
+    "unit_price": 1.79,
+    "defect": 0
+   },
+   {
+    "process": "折弯",
+    "name": "孙丽华",
+    "qty": 132,
+    "unit_price": 3.08,
+    "defect": 0
+   }
+  ],
+  "total_amount": 3780.06
+ },
+ "sheet_C_01.png": {
+  "tier": "C",
+  "sheet_no": "SJ-2026272",
+  "workshop": "冲压车间",
+  "date": "2026-09-02",
+  "rows": [
+   {
+    "process": "攻丝",
+    "name": "周建军",
+    "qty": 177,
+    "unit_price": 1.78,
+    "defect": 0
+   },
+   {
+    "process": "焊接",
+    "name": "蒋大明",
+    "qty": 41,
+    "unit_price": 1.06,
+    "defect": 0
+   },
+   {
+    "process": "冲压",
+    "name": "郑海涛",
+    "qty": 367,
+    "unit_price": 2.56,
+    "defect": 0
+   },
+   {
+    "process": "冲压",
+    "name": "赵国庆",
+    "qty": 476,
+    "unit_price": 1.02,
+    "defect": 0
+   },
+   {
+    "process": "攻丝",
+    "name": "陈小红",
+    "qty": 292,
+    "unit_price": 1.01,
+    "defect": 2
+   },
+   {
+    "process": "焊接",
+    "name": "李秀兰",
+    "qty": 53,
+    "unit_price": 1.46,
+    "defect": 0
+   },
+   {
+    "process": "折弯",
+    "name": "王建国",
+    "qty": 178,
+    "unit_price": 0.57,
+    "defect": 0
+   }
+  ],
+  "total_amount": 2257.32
+ },
+ "sheet_C_02.png": {
+  "tier": "C",
+  "sheet_no": "SJ-2026107",
+  "workshop": "装配车间",
+  "date": "2026-09-04",
+  "rows": [
+   {
+    "process": "打磨",
+    "name": "赵国庆",
+    "qty": 424,
+    "unit_price": 0.45,
+    "defect": 0
+   },
+   {
+    "process": "喷漆",
+    "name": "刘志强",
+    "qty": 451,
+    "unit_price": 2.52,
+    "defect": 0
+   },
+   {
+    "process": "裁剪",
+    "name": "郑海涛",
+    "qty": 248,
+    "unit_price": 1.31,
+    "defect": 6
+   },
+   {
+    "process": "裁剪",
+    "name": "吴春梅",
+    "qty": 132,
+    "unit_price": 0.68,
+    "defect": 0
+   },
+   {
+    "process": "喷漆",
+    "name": "蒋大明",
+    "qty": 139,
+    "unit_price": 1.42,
+    "defect": 0
+   },
+   {
+    "process": "攻丝",
+    "name": "张卫东",
+    "qty": 182,
+    "unit_price": 2.91,
+    "defect": 0
+   },
+   {
+    "process": "攻丝",
+    "name": "李秀兰",
+    "qty": 115,
+    "unit_price": 2.3,
+    "defect": 0
+   }
+  ],
+  "total_amount": 2733.46
+ },
+ "sheet_C_03.png": {
+  "tier": "C",
+  "sheet_no": "SJ-2026414",
+  "workshop": "冲压车间",
+  "date": "2026-09-15",
+  "rows": [
+   {
+    "process": "裁剪",
+    "name": "陈小红",
+    "qty": 154,
+    "unit_price": 1.77,
+    "defect": 3
+   },
+   {
+    "process": "装配",
+    "name": "周建军",
+    "qty": 445,
+    "unit_price": 2.57,
+    "defect": 0
+   },
+   {
+    "process": "喷漆",
+    "name": "孙丽华",
+    "qty": 412,
+    "unit_price": 1.27,
+    "defect": 3
+   },
+   {
+    "process": "焊接",
+    "name": "郑海涛",
+    "qty": 112,
+    "unit_price": 2.06,
+    "defect": 0
+   },
+   {
+    "process": "冲压",
+    "name": "刘志强",
+    "qty": 130,
+    "unit_price": 2.42,
+    "defect": 5
+   },
+   {
+    "process": "冲压",
+    "name": "张卫东",
+    "qty": 438,
+    "unit_price": 1.86,
+    "defect": 4
+   }
+  ],
+  "total_amount": 3299.47
+ },
+ "sheet_C_04.png": {
+  "tier": "C",
+  "sheet_no": "SJ-2026721",
+  "workshop": "冲压车间",
+  "date": "2026-09-01",
+  "rows": [
+   {
+    "process": "攻丝",
+    "name": "赵国庆",
+    "qty": 144,
+    "unit_price": 1.48,
+    "defect": 0
+   },
+   {
+    "process": "喷漆",
+    "name": "郑海涛",
+    "qty": 213,
+    "unit_price": 1.76,
+    "defect": 0
+   },
+   {
+    "process": "折弯",
+    "name": "刘志强",
+    "qty": 196,
+    "unit_price": 2.74,
+    "defect": 6
+   },
+   {
+    "process": "装配",
+    "name": "蒋大明",
+    "qty": 124,
+    "unit_price": 0.9,
+    "defect": 0
+   },
+   {
+    "process": "裁剪",
+    "name": "王建国",
+    "qty": 417,
+    "unit_price": 1.09,
+    "defect": 3
+   },
+   {
+    "process": "裁剪",
+    "name": "周建军",
+    "qty": 393,
+    "unit_price": 2.73,
+    "defect": 0
+   },
+   {
+    "process": "焊接",
+    "name": "吴春梅",
+    "qty": 341,
+    "unit_price": 0.87,
+    "defect": 0
+   }
+  ],
+  "total_amount": 3060.73
+ },
+ "sheet_C_05.png": {
+  "tier": "C",
+  "sheet_no": "SJ-2026736",
+  "workshop": "钣金车间",
+  "date": "2026-09-20",
+  "rows": [
+   {
+    "process": "打磨",
+    "name": "张卫东",
+    "qty": 361,
+    "unit_price": 0.68,
+    "defect": 0
+   },
+   {
+    "process": "裁剪",
+    "name": "孙丽华",
+    "qty": 389,
+    "unit_price": 2.97,
+    "defect": 0
+   },
+   {
+    "process": "喷漆",
+    "name": "冯玉珍",
+    "qty": 75,
+    "unit_price": 3.1,
+    "defect": 3
+   },
+   {
+    "process": "装配",
+    "name": "周建军",
+    "qty": 398,
+    "unit_price": 3.13,
+    "defect": 0
+   },
+   {
+    "process": "装配",
+    "name": "赵国庆",
+    "qty": 57,
+    "unit_price": 0.39,
+    "defect": 0
+   },
+   {
+    "process": "喷漆",
+    "name": "陈小红",
+    "qty": 116,
+    "unit_price": 0.38,
+    "defect": 0
+   },
+   {
+    "process": "冲压",
+    "name": "王建国",
+    "qty": 431,
+    "unit_price": 1.66,
+    "defect": 0
+   }
+  ],
+  "total_amount": 3660.82
+ },
+ "sheet_C_06.png": {
+  "tier": "C",
+  "sheet_no": "SJ-2026722",
+  "workshop": "装配车间",
+  "date": "2026-09-02",
+  "rows": [
+   {
+    "process": "装配",
+    "name": "孙丽华",
+    "qty": 68,
+    "unit_price": 3.16,
+    "defect": 0
+   },
+   {
+    "process": "折弯",
+    "name": "周建军",
+    "qty": 91,
+    "unit_price": 1.3,
+    "defect": 0
+   },
+   {
+    "process": "裁剪",
+    "name": "冯玉珍",
+    "qty": 195,
+    "unit_price": 0.79,
+    "defect": 0
+   },
+   {
+    "process": "打磨",
+    "name": "郑海涛",
+    "qty": 235,
+    "unit_price": 1.74,
+    "defect": 0
+   },
+   {
+    "process": "装配",
+    "name": "张卫东",
+    "qty": 154,
+    "unit_price": 2.61,
+    "defect": 0
+   },
+   {
+    "process": "攻丝",
+    "name": "蒋大明",
+    "qty": 310,
+    "unit_price": 3.15,
+    "defect": 0
+   },
+   {
+    "process": "喷漆",
+    "name": "赵国庆",
+    "qty": 151,
+    "unit_price": 1.9,
+    "defect": 4
+   }
+  ],
+  "total_amount": 2561.47
+ },
+ "sheet_C_07.png": {
+  "tier": "C",
+  "sheet_no": "SJ-2026856",
+  "workshop": "冲压车间",
+  "date": "2026-09-22",
+  "rows": [
+   {
+    "process": "装配",
+    "name": "张卫东",
+    "qty": 369,
+    "unit_price": 2.55,
+    "defect": 0
+   },
+   {
+    "process": "焊接",
+    "name": "赵国庆",
+    "qty": 117,
+    "unit_price": 1.54,
+    "defect": 0
+   },
+   {
+    "process": "攻丝",
+    "name": "周建军",
+    "qty": 439,
+    "unit_price": 1.0,
+    "defect": 2
+   },
+   {
+    "process": "裁剪",
+    "name": "吴春梅",
+    "qty": 466,
+    "unit_price": 1.91,
+    "defect": 0
+   },
+   {
+    "process": "裁剪",
+    "name": "孙丽华",
+    "qty": 292,
+    "unit_price": 0.98,
+    "defect": 0
+   }
+  ],
+  "total_amount": 2736.35
+ },
+ "sheet_C_08.png": {
+  "tier": "C",
+  "sheet_no": "SJ-2026327",
+  "workshop": "冲压车间",
+  "date": "2026-09-09",
+  "rows": [
+   {
+    "process": "打磨",
+    "name": "李秀兰",
+    "qty": 360,
+    "unit_price": 1.62,
+    "defect": 0
+   },
+   {
+    "process": "攻丝",
+    "name": "赵国庆",
+    "qty": 80,
+    "unit_price": 1.59,
+    "defect": 0
+   },
+   {
+    "process": "冲压",
+    "name": "郑海涛",
+    "qty": 442,
+    "unit_price": 1.55,
+    "defect": 0
+   },
+   {
+    "process": "装配",
+    "name": "吴春梅",
+    "qty": 95,
+    "unit_price": 0.92,
+    "defect": 1
+   },
+   {
+    "process": "折弯",
+    "name": "蒋大明",
+    "qty": 284,
+    "unit_price": 2.77,
+    "defect": 0
+   },
+   {
+    "process": "裁剪",
+    "name": "王建国",
+    "qty": 180,
+    "unit_price": 2.58,
+    "defect": 0
+   },
+   {
+    "process": "攻丝",
+    "name": "孙丽华",
+    "qty": 182,
+    "unit_price": 3.01,
+    "defect": 0
+   }
+  ],
+  "total_amount": 3281.8
+ },
+ "sheet_C_09.png": {
+  "tier": "C",
+  "sheet_no": "SJ-2026220",
+  "workshop": "装配车间",
+  "date": "2026-09-15",
+  "rows": [
+   {
+    "process": "喷漆",
+    "name": "刘志强",
+    "qty": 344,
+    "unit_price": 0.85,
+    "defect": 0
+   },
+   {
+    "process": "攻丝",
+    "name": "吴春梅",
+    "qty": 366,
+    "unit_price": 1.16,
+    "defect": 0
+   },
+   {
+    "process": "攻丝",
+    "name": "郑海涛",
+    "qty": 299,
+    "unit_price": 3.01,
+    "defect": 1
+   },
+   {
+    "process": "焊接",
+    "name": "王建国",
+    "qty": 459,
+    "unit_price": 3.05,
+    "defect": 0
+   },
+   {
+    "process": "冲压",
+    "name": "赵国庆",
+    "qty": 284,
+    "unit_price": 2.3,
+    "defect": 0
+   },
+   {
+    "process": "冲压",
+    "name": "孙丽华",
+    "qty": 353,
+    "unit_price": 2.1,
+    "defect": 0
+   }
+  ],
+  "total_amount": 4411.4
+ },
+ "sheet_C_10.png": {
+  "tier": "C",
+  "sheet_no": "SJ-2026967",
+  "workshop": "装配车间",
+  "date": "2026-09-06",
+  "rows": [
+   {
+    "process": "折弯",
+    "name": "张卫东",
+    "qty": 143,
+    "unit_price": 2.48,
+    "defect": 4
+   },
+   {
+    "process": "打磨",
+    "name": "李秀兰",
+    "qty": 339,
+    "unit_price": 1.48,
+    "defect": 4
+   },
+   {
+    "process": "攻丝",
+    "name": "王建国",
+    "qty": 435,
+    "unit_price": 0.93,
+    "defect": 1
+   },
+   {
+    "process": "焊接",
+    "name": "蒋大明",
+    "qty": 376,
+    "unit_price": 3.07,
+    "defect": 6
+   },
+   {
+    "process": "攻丝",
+    "name": "赵国庆",
+    "qty": 135,
+    "unit_price": 2.87,
+    "defect": 0
+   },
+   {
+    "process": "攻丝",
+    "name": "郑海涛",
+    "qty": 401,
+    "unit_price": 0.6,
+    "defect": 0
+   }
+  ],
+  "total_amount": 3043.28
+ }
+}
