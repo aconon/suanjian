@@ -158,7 +158,7 @@ class TestSettlements:
 
 
 # ---------------------------------------------------------------------
-# audit：写操作留痕（军机处模式）
+# audit：写操作留痕（成熟模式）
 # ---------------------------------------------------------------------
 
 class TestAudit:
@@ -174,7 +174,7 @@ class TestAudit:
         assert '"rows": 2' in row["detail_json"] or '"rows":2' in row["detail_json"]
 
     def test_audit_never_raises(self, conn):
-        # 审计失败绝不砸业务：连接坏掉也只吞错（军机处铁律）。
+        # 审计失败绝不砸业务：连接坏掉也只吞错（审计铁律）。
         # sqlite3.Connection 是 C 类型不许实例级 patch，用假连接对象模拟坏库
         class BoomConn:
             def execute(self, *a, **k):

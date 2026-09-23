@@ -175,7 +175,7 @@ def _gate_code() -> str:
 _CODE_MAX_FAILS = 5     # 连错 5 次锁
 _CODE_LOCK_SECS = 120   # 锁 2 分钟（超期自动解）
 _CODE_FAILS = {}        # ip -> [失败次数, 锁到时间戳]（内存表，重启即清）
-_CODE_FAILS_LOCK = threading.Lock()   # 计数读改写要原子（军机处审查 #7 同款）
+_CODE_FAILS_LOCK = threading.Lock()   # 计数读改写要原子（先例仓审查 #7 同款）
 
 
 def _code_fail_note(ip: str, now=None) -> tuple:
@@ -185,7 +185,7 @@ def _code_fail_note(ip: str, now=None) -> tuple:
     （st[0] 已 >= 5），过期后再错 1 次即再次置锁 2 分钟，不重新数满 5 次。
     穷举者拿不到「每 2 分钟白嫖 4 次试错」的窗口。
     now 可注入（测试用确定性时钟）。顺手清理：表只增不清会慢泄漏
-    （军机处 _purge_lan_state 的教训），超 1024 项时先清过期条目。
+    （先例仓 _purge_lan_state 的教训），超 1024 项时先清过期条目。
     R10-5：st[1]=0 的「只错未锁」条目也算过期回收（0 < now 恒真，
     旧写法 st[1] and ... 里 0 是 falsy，这类条目永远清不掉）。
     R11-F1：清理必须跳过当前 ip——清理块在 get(ip) 之前跑，若不跳过，
@@ -218,7 +218,7 @@ def _code_lock_state(ip: str, now=None) -> bool:
 
 
 def _code_fail_clear(ip: str) -> None:
-    """输对口令：计数清零（军机处口径——成功即清，不累计历史错误）。"""
+    """输对口令：计数清零（成熟口径——成功即清，不累计历史错误）。"""
     with _CODE_FAILS_LOCK:
         _CODE_FAILS.pop(ip, None)
 
@@ -368,7 +368,7 @@ def _db():
 
 
 def errorhandler(handler, route):
-    """全局异常兜底（军机处五类）：业务错→人话 JSON；引擎校验错→400；
+    """全局异常兜底（五类兜底）：业务错→人话 JSON；引擎校验错→400；
     断管/超时不炸线程；数值越界→400；系统错→500 固定话术+堆栈落日志；
     连日志写不进→stderr 兜底。
     """
@@ -1295,7 +1295,7 @@ class Handler(BaseHTTPRequestHandler):
 
         401/429 走 ApiError → errorhandler → _error：没收的 body 会被 drain 掉，
         keep-alive 连接不被早退弄串包（塔罗踩过的坑）。
-        R9-F7 限速（军机处口径）：同 IP 连错 5 次锁 _CODE_LOCK_SECS，锁定期内
+        R9-F7 限速（成熟口径）：同 IP 连错 5 次锁 _CODE_LOCK_SECS，锁定期内
         对口令也 429；输对清零。
         """
         if path in ("/api", "/api/") or path.startswith("/api/"):

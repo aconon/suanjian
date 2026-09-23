@@ -6,14 +6,14 @@
 - 打包态（sys.frozen，PyInstaller）：数据跟 exe 走（与 server.py BASE_DIR 同口径，
   __file__ 在临时解包目录，退出即删，不能放库）
 - WAL + busy_timeout=30000：ThreadingHTTPServer 每请求一线程，跨线程并发写不炸
-  （防军机处踩过的 SQLite 并发锁坑）
+  （防先前项目踩过的 SQLite 并发锁坑）
 - 连接线程局部（同线程复用，跨线程各开各的，绝不跨线程共享 sqlite3.Connection）
 - 建表幂等：CREATE TABLE IF NOT EXISTS，ensure() 每线程首跑一次，重复跑无害
 
 表：
 - tickets     工票：票号(UNIQUE，重存=覆盖)/车间/日期/行 JSON/原始 CSV/created_at
 - settlements 结算底账：期间(YYYY-MM，空串=未归期)/模式/结果 JSON/created_at
-- audit_log   审计留痕（军机处模式，配套 core/audit.py）
+- audit_log   审计留痕（成熟模式，配套 core/audit.py）
 """
 import json
 import os

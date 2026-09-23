@@ -10,7 +10,7 @@
   gross 缺失/垃圾/负数
 - GET /api/health：{"ok": true}
 - GET /：静态 web/（index.html / style.css / app.js），路径穿越一律 404
-- 军机处模式回归：keep-alive 串包防护（GET 带 body 后复用 / 错误后复用 / 未知路由后复用）、
+- 成熟模式回归：keep-alive 串包防护（GET 带 body 后复用 / 错误后复用 / 未知路由后复用）、
   413 超限收线、chunked 411、全响应带 Content-Length、日志净化（控制字符转义）、
   引擎炸掉 500 兜底且服务线程不死、_safe_rollback 永不抛
 - R1-R4 修复单回归：Host 白名单 403 收线、负 Content-Length 收线、数值幅度上限 400、
@@ -527,7 +527,7 @@ class TestStatic:
 
 
 # =====================================================================
-# 军机处模式回归：keep-alive 安全 / 限流 / 411 / 500 兜底 / 日志净化
+# 成熟模式回归：keep-alive 安全 / 限流 / 411 / 500 兜底 / 日志净化
 # =====================================================================
 
 class TestKeepAliveSafety:
