@@ -2,13 +2,13 @@
 """core/audit.py 兜底路径留痕测试（v1.4 清 delivery-report 已知 Minor）。
 
 delivery-report 唯一 Minor（swallowed_exception，core/audit.py:25）：
-fd 2 都关了的极端分支里 `except OSError: pass` 完全静默。验货器要求
+fd 2 都关了的极端分支里 `except OSError: pass` 完全静默。自动完成度检查要求
 「至少 logging.exception() 记下来」——修法：logging 自带 OSError 兜底
 （Handler.handleError 不外抛），外再包 contextlib.suppress 保「审计失败
-绝不砸业务」铁律；pass 从 except 下一行挪走，验货器规则不再命中。
+绝不砸业务」铁律；pass 从 except 下一行挪走，自动检查规则不再命中。
 
 test_audit_never_raises（test_db.py）已锁「不抛」；这里锁「留痕尝试」
-与「验货器判定不再命中」两层。
+与「自动检查判定不再命中」两层。
 """
 import re
 from pathlib import Path
@@ -29,7 +29,7 @@ class TestAuditFallbackLogging:
         assert "contextlib.suppress" in AUDIT_PY
 
     def test_no_silent_pass_after_oserror(self):
-        """镜像验货器判定：except OSError 的下一行不许是裸 pass（防回归）。"""
+        """镜像自动完成度检查：except OSError 的下一行不许是裸 pass（防回归）。"""
         lines = AUDIT_PY.split("\n")
         for i, line in enumerate(lines):
             if re.match(r"^\s*except\b[^:]*:\s*(#.*)?$", line):
