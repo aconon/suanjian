@@ -4,7 +4,7 @@
 前端无 JS 测试框架，这里用两层防线：
 1. node --check 保证语法可解析（改坏了立刻红）；
 2. 源码契约断言锁住修复单要求的关键行为（防回退到旧的写法）。
-真浏览器行为验收归主会话无头 Chrome 流程（见 docs/任务单/02-前端单页）。
+真浏览器行为验收由人工在无头 Chrome 流程里执行（历史工单存档可查）。
 """
 import subprocess
 from pathlib import Path

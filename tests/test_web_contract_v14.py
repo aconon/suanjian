@@ -22,7 +22,7 @@ WEB = Path(__file__).resolve().parent.parent / "web"
 ROOT = Path(__file__).resolve().parent.parent
 
 # 19dcf4d 改写前的旧两字措辞（源码里已清零）。拆开写：两字连写（或英文
-# 同义标记词）会被验货器判成未完成标记——知识库部署运维类已有此坑档案
+# 同义标记词）会被自动完成度检查判成未完成标记——运维踩坑档案里已有此例
 _OLD_WORD = "占" + "位"
 
 
