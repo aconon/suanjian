@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""core.audit — 审计：所有写操作留痕（照军机处 core/audit.py 模式移植）。
+"""core.audit — 审计：所有写操作留痕（单机审计惯例：失败绝不砸业务）。
 
 用法一行：audit(conn, actor, action, target, **detail)。
 绝不抛错（审计失败不能砸业务），失败时 stderr 兜底（DB 全挂时终端是唯一必达通道）。
